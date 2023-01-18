@@ -15,6 +15,7 @@ class StockProductionLot(models.Model):
 
     warranty_exp_date = fields.Date(string="Warranty Expiration Date", compute='_compute_warranty_exp_date')
 
+
 @api.depends('product_id')
 def _compute_warranty_exp_date(self):
     for record in self:
